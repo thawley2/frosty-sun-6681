@@ -6,4 +6,8 @@ class Doctor < ApplicationRecord
   def hospital_name
     hospital.name
   end
+
+  def all_patients
+    patients.pluck(:name)
+  end
 end
