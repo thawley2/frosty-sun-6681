@@ -18,6 +18,8 @@ RSpec.describe Hospital do
   let!(:link5) {DoctorPatient.create!(doctor: doctor2, patient: patient2)}
 
   it {should have_many :doctors}
+  it {should have_many(:doctor_patients).through(:doctors)}
+  it {should have_many(:patients).through(:doctor_patients)}
 
   describe 'doctors_patient_count' do
     it 'should return an array of doctors ordered by patient count and having a virtual attribute for the count of patients' do
