@@ -6,4 +6,8 @@ class Doctor < ApplicationRecord
   def hospital_name
     hospital.name
   end
+
+  def find_join_id(pat)
+    doctor_patients.where(doctor_patients: {patient_id: pat.id}).pluck(:id).first
+  end
 end
