@@ -2,3 +2,5 @@
 <h2>Specialty: <%= @doctor.specialty %></h2>
 <h2>University Attended: <%= @doctor.university %></h2>
 <h2>Hospital Attending: <%= @doctor.hospital_name %>
+
+<h3>Patients: <%= @doctor.all_patients.to_sentence %>
