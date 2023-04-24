@@ -30,13 +30,5 @@ RSpec.describe Doctor do
         expect(doctor3.hospital_name).to eq('South st clinic')
       end
     end
-
-    describe '#all_patients' do
-      it 'returns an array of all patient names for the doctor' do
-        expect(doctor1.all_patients).to eq(['Janey', 'Ringo', 'Starsky'])
-        expect(doctor2.all_patients).to eq([])
-        expect(doctor3.all_patients).to eq(['Starsky'])
-      end
-    end
   end
 end

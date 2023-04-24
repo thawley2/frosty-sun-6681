@@ -3,4 +3,10 @@
 <h2>University Attended: <%= @doctor.university %></h2>
 <h2>Hospital Attending: <%= @doctor.hospital_name %>
 
-<h3>Patients: <%= @doctor.all_patients.to_sentence %>
+<h3>Patients: 
+<ul>
+<% @doctor.patients.each do |patient| %>
+  <li id="patient_<%=patient.id %>">
+    <%= patient.name %></li>
+<% end %>
+</ul>

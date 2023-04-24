@@ -32,7 +32,15 @@ RSpec.describe '/doctors/:id', type: :feature do
     it 'I see the names of all of the patients this doctor has' do
       visit doctor_path(doctor1)
 save_and_open_page
-      expect(page).to have_content('Patients: Janey, Ringo, and Starsky')
+      within "#patient_#{patient1.id}" do
+        expect(page).to have_content('Janey')
+      end
+      within "#patient_#{patient2.id}" do
+        expect(page).to have_content('Ringo')
+      end
+      within "#patient_#{patient3.id}" do
+        expect(page).to have_content('Starsky')
+      end
     end
   end
 end
