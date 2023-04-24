@@ -30,5 +30,13 @@ RSpec.describe Doctor do
         expect(doctor3.hospital_name).to eq('South st clinic')
       end
     end
+
+    describe '#find_join_id' do
+      it 'returns the id of the doctor_patients record' do
+        expect(doctor1.find_join_id(patient1)).to eq(link1.id)
+        expect(doctor1.find_join_id(patient2)).to eq(link2.id)
+        expect(doctor1.find_join_id(patient3)).to eq(link3.id)
+      end
+    end
   end
 end
